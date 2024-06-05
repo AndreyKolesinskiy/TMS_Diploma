@@ -11,7 +11,7 @@ using TMS_Diploma.Utils;
 
 namespace TMS_Diploma.Tests
 {
-    [Parallelizable(ParallelScope.Fixtures)]
+    //[Parallelizable(ParallelScope.Fixtures)]
     [AllureNUnit]
     [TestFixture]
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
