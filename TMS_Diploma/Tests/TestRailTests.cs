@@ -15,7 +15,7 @@ namespace TMS_Diploma.Tests
         }
 
         [Test]
-        [Category("TestRail_tests")]
+        [Category("UI_Tests")]
         public void CreateTestProject()
         {
             TRDashboardPage.AddProjectButton().Click();
@@ -40,7 +40,7 @@ namespace TMS_Diploma.Tests
         }
 
         [Test]
-        [Category("TestRail_tests")]
+        [Category("UI_Tests")]
         public void DeleteTestProject()
         {
             TRDashboardPage.AddProjectButton().Click();
