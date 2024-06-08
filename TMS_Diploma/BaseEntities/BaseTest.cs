@@ -9,13 +9,13 @@ using TMS_Diploma.Core;
 using TMS_Diploma.Pages;
 using TMS_Diploma.Utils;
 
-namespace TMS_Diploma.Tests
+namespace TMS_Diploma.BaseEntities
 {
     //[Parallelizable(ParallelScope.Fixtures)]
     [AllureNUnit]
     [TestFixture]
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
-    public class BaseTest
+    public class BaseTest :BaseApiTest
     {
         //[OneTimeSetUp]
         //[AllureBefore("Clean up allure-results directory")]
@@ -55,20 +55,20 @@ namespace TMS_Diploma.Tests
                 var screenshotByte = screenshot.AsByteArray;
                 AllureApi.AddAttachment("screenshot", "image/png", screenshotByte);
             }
-            try
-            {
-                var errorLogfilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-            "ErrorLogFile.txt");
-                var infoLogfilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                    "InfoLogFile.txt");
+            //try
+            //{
+            //    var errorLogfilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+            //"ErrorLogFile.txt");
+            //    var infoLogfilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+            //        "InfoLogFile.txt");
 
-                AllureApi.AddAttachment("errorLog", "text/html", errorLogfilePath);
-                AllureApi.AddAttachment("infoLog", "text/html", infoLogfilePath);
-            }
-            catch
-            {
-                Console.WriteLine("Couldnt load file");
-            }
+            //    AllureApi.AddAttachment("errorLog", "text/html", errorLogfilePath);
+            //    AllureApi.AddAttachment("infoLog", "text/html", infoLogfilePath);
+            //}
+            //catch
+            //{
+            //    Console.WriteLine("Couldnt load file");
+            //}
             Driver.Close();
             Driver.Quit();
 

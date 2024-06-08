@@ -20,7 +20,7 @@ namespace TMS_Diploma.Pages
 
         public void OpenPageByUrl()
         {
-            Driver.Navigate().GoToUrl(Configurator.ReadConfiguration().BaseUrl + GetEndpoint());
+            Driver.Navigate().GoToUrl(Configurator.ReadConfiguration().BaseTRUrl + GetEndpoint());
         }
 
         protected override void ExecuteLoad()

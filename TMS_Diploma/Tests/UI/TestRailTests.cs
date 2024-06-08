@@ -1,7 +1,8 @@
-﻿using TMS_Diploma.Models;
+﻿using TMS_Diploma.BaseEntities;
+using TMS_Diploma.Models;
 using TMS_Diploma.Pages;
 
-namespace TMS_Diploma.Tests
+namespace TMS_Diploma.Tests.UI
 {
     [TestFixture]
     public class TestRailTests : BaseTest
