@@ -1,0 +1,1 @@
+2024/06/10 15:28:09.961|INFO|{"id":450,"name":"AKaliasinski_Test_Project","announcement":"test","show_announcement":true,"is_completed":false,"completed_on":null,"suite_mode":1,"default_role_id":null,"case_statuses_enabled":false,"url":"https:\/\/qac0405.testrail.io\/index.php?\/projects\/overview\/450","users":[],"groups":[]}      |TMS_Diploma.Tests.API.ApiTRTests|
