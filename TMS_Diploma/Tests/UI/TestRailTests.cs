@@ -1,5 +1,6 @@
 ﻿using Allure.Net.Commons;
 using Allure.NUnit.Attributes;
+using OpenQA.Selenium;
 using System.Reflection;
 using TMS_Diploma.BaseEntities;
 using TMS_Diploma.Models;
@@ -106,20 +107,9 @@ namespace TMS_Diploma.Tests.UI
             TRLoginPage.SuccessfulLogin();
             TRMilestonesPage.OpenPageByUrl();
             TRMilestonesPage.AddMilestoneButton().Click();
-            TRMilestonesPage.UploadAttachmentIcon().Click();
-            //TRMilestonesPage.AddNewButton().Click();
-            //TRMilestonesPage.AddNewButton().SendKeys(filePath);
-            //IJavaScriptExecutor javaScriptExecutor;
-            //var element = Driver.FindElement(By.Id("newAttachments"));
-            //javaScriptExecutor = (IJavaScriptExecutor)Driver;
-            //javaScriptExecutor.ExecuteScript("arguments[0].type='visible';", element);
-            //javaScriptExecutor.ExecuteScript("arguments[0].click();", element);
-
-            //element.SendKeys(filePath);
-            //element.SendWait()
-
-            Assert.That(TRMilestonesPage.AddedAttachment().Displayed);
+            TRMilestonesPage.ElementForUpload().SendKeys(filePath);
             
+            Assert.That(TRMilestonesPage.AddedAttachment().Displayed);
         }
     }
 }
