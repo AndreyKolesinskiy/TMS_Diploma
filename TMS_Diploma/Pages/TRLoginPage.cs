@@ -10,6 +10,7 @@ namespace TMS_Diploma.Pages
         public UiElement EmailField() => new(Driver, By.Id("name"));
         public UiElement PasswordField() => new(Driver, By.Id("password"));
         public UiElement LogInButton() => new(Driver, By.Id("button_primary"));
+        public UiElement IncorrectCredentialsErrorMessage() => new(Driver, By.XPath("//*[@data-testid='loginErrorText']"));
 
         public TRLoginPage(IWebDriver driver) : base(driver)
         {

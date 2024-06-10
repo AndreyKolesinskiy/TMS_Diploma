@@ -32,6 +32,7 @@ namespace TMS_Diploma.BaseEntities
         public TRDashboardPage TRDashboardPage { get; set; }
         public TRAddProjectPage TRAddProjectPage { get; set; }
         public TRProjectsPage TRProjectsPage { get; set; }
+        public TRMilestonesPage TRMilestonesPage { get; set; }
 
         [SetUp]
         public void SetUp()
@@ -43,6 +44,7 @@ namespace TMS_Diploma.BaseEntities
             TRDashboardPage = new TRDashboardPage(Driver);
             TRAddProjectPage = new TRAddProjectPage(Driver);
             TRProjectsPage = new TRProjectsPage(Driver);
+            TRMilestonesPage = new TRMilestonesPage(Driver);
         }
 
         [TearDown]

@@ -1,18 +1,10 @@
-﻿using RestSharp.Authenticators;
-using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RestSharp;
 using TMS_Diploma.BaseEntities;
-using TMS_Diploma.Utils;
-using System.Text.Json;
 using NLog;
 using System.Net;
 using TMS_Diploma.Models;
-using TMS_Diploma.Services.API;
-using System.Diagnostics.Contracts;
+using Allure.Net.Commons;
+using Allure.NUnit.Attributes;
 
 namespace TMS_Diploma.Tests.API
 {
@@ -21,6 +13,10 @@ namespace TMS_Diploma.Tests.API
         private Logger _logger = LogManager.GetCurrentClassLogger();
 
         [Test]
+        [Category("API_Tests")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureSuite("API tests")]
+        [AllureDescription("Create new project")]
         public void ApiCreateProject()
         {
             const string endPoint = "/index.php?/api/v2/add_project";
@@ -48,6 +44,10 @@ namespace TMS_Diploma.Tests.API
         }
 
         [Test]
+        [Category("API_Tests")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureSuite("API tests")]
+        [AllureDescription("Check data for created project")]
         public void ApiGetCreatedProject()
         {
             const string endpoint = "/index.php?/api/v2/get_project/{project_id}";
@@ -72,6 +72,10 @@ namespace TMS_Diploma.Tests.API
         }
 
         [Test]
+        [Category("API_Tests")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureSuite("API tests")]
+        [AllureDescription("Add new Milestone to existing project")]
         public void ApiAddMilestone()
         {
             const string endPoint = "/index.php?/api/v2/add_milestone/{project_id}";
@@ -97,6 +101,10 @@ namespace TMS_Diploma.Tests.API
         }
 
         [Test]
+        [Category("API_Tests")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureSuite("API tests")]
+        [AllureDescription("Check Milestone for existing project")]
         public void ApiGetMilestone()
         {
             const string endpoint = "/index.php?/api/v2/get_milestone/{milestone_id}";
@@ -121,6 +129,10 @@ namespace TMS_Diploma.Tests.API
         }
 
         [Test]
+        [Category("API_Tests")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureSuite("API tests")]
+        [AllureDescription("Delete Milestone for existing project")]
         public void ApiDeleteMilestone()
         {
             const string addMilestoneEndPoint = "/index.php?/api/v2/add_milestone/{project_id}";
