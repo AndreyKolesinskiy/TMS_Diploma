@@ -1,0 +1,2 @@
+2024/06/10 15:23:25.275|INFO|155      |TMS_Diploma.Tests.API.ApiTRTests|
+2024/06/10 15:23:25.275|INFO|      |TMS_Diploma.Tests.API.ApiTRTests|
