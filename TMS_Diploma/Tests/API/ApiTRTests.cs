@@ -8,7 +8,7 @@ using Allure.NUnit.Attributes;
 
 namespace TMS_Diploma.Tests.API
 {
-    public class ApiTRTests : BaseTest
+    public class ApiTRTests : BaseApiTest
     {
         private Logger _logger = LogManager.GetCurrentClassLogger();
 

@@ -1,6 +1,5 @@
 ﻿using Allure.Net.Commons;
 using Allure.NUnit.Attributes;
-using OpenQA.Selenium;
 using System.Reflection;
 using TMS_Diploma.BaseEntities;
 using TMS_Diploma.Models;
@@ -56,6 +55,13 @@ namespace TMS_Diploma.Tests.UI
             TRProjectsPage.DeleteCheckbox().EnableCheckbox();
             TRProjectsPage.DeleteDialogOKButtton().Click();
             Assert.That(TRProjectsPage.ProjectIsDeleted(projectName), Is.True);
+            Assert.Multiple(() =>
+            {
+                Assert.That(TRProjectsPage.DeletedProjectSuccessMessage().Text,
+                    Is.EqualTo("Successfully deleted the project."));
+                Assert.That(TRProjectsPage.ProjectIsDeleted(projectName), Is.True);
+            }
+            );
         }
 
         [Test]

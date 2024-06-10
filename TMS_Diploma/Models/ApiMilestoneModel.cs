@@ -17,8 +17,7 @@ namespace TMS_Diploma.Models
 
         public bool Equals(ApiMilestoneModel milestoneModel)
         {
-            return Name == milestoneModel.Name && Description == milestoneModel.Description && 
-                Id == milestoneModel.Id;
+            return Name == milestoneModel.Name && Description == milestoneModel.Description;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using TMS_Diploma.BaseEntities;
 using TMS_Diploma.Element;
 
 namespace TMS_Diploma.Pages
@@ -10,6 +11,7 @@ namespace TMS_Diploma.Pages
         public Checkbox DeleteCheckbox() => new(Driver, By.XPath("//*[@role='dialog']//*[@name='deleteCheckbox']"));
         public UiElement DeleteDialogOKButtton() => new(Driver, By.XPath("//*[@role='dialog']//*[@data-testid='caseFieldsTabDeleteDialogButtonOk']"));
         public UiElement ProjectsPageTitle() => new(Driver, By.XPath("//*[@data-testid='testCaseContentHeaderTitle']"));
+        public UiElement DeletedProjectSuccessMessage() => new(Driver, By.XPath("//*[@data-testid='messageSuccessDivBox']"));
         public UiElement GetNewCreatedProjectElement(string projectName)
         {
             return new(Driver, By.XPath($"//*[text()='{projectName}']"));

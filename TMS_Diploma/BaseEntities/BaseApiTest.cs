@@ -1,16 +1,19 @@
-﻿using RestSharp;
+﻿using Allure.NUnit;
+using Allure.NUnit.Attributes;
+using RestSharp;
 using TMS_Diploma.Services.API;
 using TMS_Diploma.Utils;
 
 namespace TMS_Diploma.BaseEntities
 {
+    [AllureNUnit]
     public class BaseApiTest
     {
         protected ApiServices ApiServices { get; private set; }
         protected RestClient Client { get; private set; }
-        private RestClientOptions _restOption;
 
         [SetUp]
+        [AllureBefore("Setup Client")]
         public void SetupApi()
         {
             ApiServices = new ApiServices();
@@ -20,6 +23,7 @@ namespace TMS_Diploma.BaseEntities
         }
 
         [TearDown]
+        [AllureAfter("Client Dispose")]
         public void TearDownApi()
         {
             Client.Dispose();

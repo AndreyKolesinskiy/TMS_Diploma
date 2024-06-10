@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using TMS_Diploma.Utils;
 
-namespace TMS_Diploma.Pages
+namespace TMS_Diploma.BaseEntities
 {
     public abstract class BasePage : LoadableComponent<BasePage>
     {

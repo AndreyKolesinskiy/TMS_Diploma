@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using TMS_Diploma.BaseEntities;
 using TMS_Diploma.Element;
 
 namespace TMS_Diploma.Pages

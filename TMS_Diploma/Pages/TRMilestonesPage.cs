@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS_Diploma.BaseEntities;
 using TMS_Diploma.Element;
 
 namespace TMS_Diploma.Pages
