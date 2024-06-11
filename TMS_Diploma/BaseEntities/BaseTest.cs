@@ -35,6 +35,7 @@ namespace TMS_Diploma.BaseEntities
         public TRMilestonesPage TRMilestonesPage { get; set; }
 
         [SetUp]
+        [AllureBefore("Setup driver")]
         public void SetUp()
         {
             Driver = new Browser().Driver;
