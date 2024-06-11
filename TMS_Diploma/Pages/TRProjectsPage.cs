@@ -6,12 +6,13 @@ namespace TMS_Diploma.Pages
 {
     public class TRProjectsPage : BasePage
     {
-        private string _endPoint = "index.php?/admin/projects/overview";
+        private string _endPoint = "/index.php?/admin/projects/overview";
 
         public Checkbox DeleteCheckbox() => new(Driver, By.XPath("//*[@role='dialog']//*[@name='deleteCheckbox']"));
         public UiElement DeleteDialogOKButtton() => new(Driver, By.XPath("//*[@role='dialog']//*[@data-testid='caseFieldsTabDeleteDialogButtonOk']"));
         public UiElement ProjectsPageTitle() => new(Driver, By.XPath("//*[@data-testid='testCaseContentHeaderTitle']"));
         public UiElement DeletedProjectSuccessMessage() => new(Driver, By.XPath("//*[@data-testid='messageSuccessDivBox']"));
+        public UiElement DeleteProjectDialogMessage() => new(Driver, By.XPath("//*[@id='deleteDialog']//*[@class='top bottom dialog-message']"));
         public UiElement GetNewCreatedProjectElement(string projectName)
         {
             return new(Driver, By.XPath($"//*[text()='{projectName}']"));

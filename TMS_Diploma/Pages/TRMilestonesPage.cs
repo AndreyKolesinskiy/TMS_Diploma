@@ -19,8 +19,8 @@ namespace TMS_Diploma.Pages
         public UiElement AddedAttachment() => new(Driver, By.XPath("//*[@data-testid='attachmentListItem']"));
         public UiElement AddAttachmentSection() => new(Driver, By.Id("libraryAttachmentsAddItem"));
         public UiElement NewAttachments() => new(Driver, By.Id("newAttachments"));
-
-
+        public UiElement ElementForFileAttachment() => new(Driver, By.XPath("//div[@id='fancy_overlay']/preceding::input[@type='file']"));
+        public IWebElement ElementForUpload() => Driver.FindElement(By.XPath("//div[@id='fancy_overlay']/preceding::input[@type='file']"));
 
         public override string GetEndpoint()
         {

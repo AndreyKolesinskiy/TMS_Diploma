@@ -75,7 +75,7 @@ namespace TMS_Diploma.Tests.UI
             TRLoginPage.EmailField().SendKeys("Tets_User");
             TRLoginPage.PasswordField().SendKeys("Tets_Password");
             TRLoginPage.LogInButton().Click();
-            Assert.That(TRLoginPage.IncorrectCredentialsErrorMessage().Text, 
+            Assert.That(TRLoginPage.IncorrectCredentialsErrorMessage().Text,
                 Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
         }
 
@@ -106,20 +106,25 @@ namespace TMS_Diploma.Tests.UI
             TRLoginPage.SuccessfulLogin();
             TRMilestonesPage.OpenPageByUrl();
             TRMilestonesPage.AddMilestoneButton().Click();
-            TRMilestonesPage.UploadAttachmentIcon().Click();
-            //TRMilestonesPage.AddNewButton().Click();
-            //TRMilestonesPage.AddNewButton().SendKeys(filePath);
-            //IJavaScriptExecutor javaScriptExecutor;
-            //var element = Driver.FindElement(By.Id("newAttachments"));
-            //javaScriptExecutor = (IJavaScriptExecutor)Driver;
-            //javaScriptExecutor.ExecuteScript("arguments[0].type='visible';", element);
-            //javaScriptExecutor.ExecuteScript("arguments[0].click();", element);
-
-            //element.SendKeys(filePath);
-            //element.SendWait()
+            TRMilestonesPage.ElementForUpload().SendKeys(filePath);
 
             Assert.That(TRMilestonesPage.AddedAttachment().Displayed);
-            
+        }
+
+        [Test]
+        [Category("UI_Tests")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureSuite("UI tests")]
+        [AllureDescription("Check confirmation message when project is deleted")]
+        public void CheckConfirmationModalForProjectDeletion()
+        {
+            string projectName = "AKaliasinski_Test_Project";
+            string expectedDialogMessage = $"Really delete project {projectName}? This also deletes all test cases and results and everything else that is part of this project. This cannot be undone.";
+            TRLoginPage.SuccessfulLogin();
+            TRProjectsPage.OpenPageByUrl();
+            TRProjectsPage.GetDeleteButtonForProject(projectName).Click();
+
+            Assert.That(TRProjectsPage.DeleteProjectDialogMessage().Text, Is.EqualTo(expectedDialogMessage));
         }
     }
 }
